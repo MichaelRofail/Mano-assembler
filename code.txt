@@ -1,0 +1,29 @@
+     ORG 100
+     LDA ADS
+     STA PTR
+     LDA NBR
+     STA CTR /comment1
+     CLA
+LOP, ADD PTR I
+     ISZ PTR
+     ISZ CTR
+     BUN LOP
+     STA SUM /comment2
+     HLT
+ADS, HEX 150
+PTR, HEX 0
+NBR, DEC -10
+CTR, HEX 0
+SUM, HEX 0
+     ORG 150
+     DEC -75
+     DEC 5
+     DEC 34
+     DEC 1
+     DEC -4
+     DEC 23
+     DEC 1
+     DEC 23
+     DEC 5
+     DEC 7
+     END
