@@ -85,8 +85,10 @@ int main(){
         if(!s.compare("ORG")){
             l >> std::hex >> lc;
         }else if(isInstruction(s, iSet, iSetCount) > -1 || !s.compare("END") || !s.compare("DEC") || !s.compare("HEX"));
-        else if(s.empty()|| s.compare(" "))cout<<"ERROR:empty line at line: " << lineCount << endl;
-        else {
+        else if(s.empty()|| s.compare(" ")){
+            cout<<"ERROR:empty line at line: " << lineCount << endl;
+            ef = true;
+        }else {
             cout<<"ERROR:Wrong instruction Or label missing a ',' at line: "<< lineCount <<endl;
             ef = true;
             continue;
@@ -102,14 +104,16 @@ int main(){
                     if(!s.compare("I")){
                         if(!l.eof()){
                             l >> s;
-                            if(s[0] != '/')cout << "ERROR: comment missing a '/' at line "<< lineCount <<endl;
-                            ef = true;
-                            continue;
+                            if(s[0] != '/'){
+                                cout << "ERROR: comment missing a '/' at line "<< lineCount <<endl;
+                                ef = true;
+                            }continue;
                         }
                     }else{
-                        if(s[0] != '/')cout << "ERROR: comment missing a '/' at line "<< lineCount <<endl;
-                        ef = true;
-                        continue;
+                        if(s[0] != '/'){
+                            cout << "ERROR: comment missing a '/' at line "<< lineCount <<endl;
+                            ef = true;
+                        }continue;
                     }          
                 }
             }else{
