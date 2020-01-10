@@ -1,5 +1,5 @@
 /*
- *This is an assembler program for the microprocessor showin in M. Morris Mano Computer
+ *This is an assembler program for the microprocessor shown in M. Morris Mano Computer
  * System Architecture for Advanced computer achitecture course Dr. Gamal Selim
  * Input files: 1-instructions.txt: holds the instruction set
  *              2-code.txt: holds the assembly code
